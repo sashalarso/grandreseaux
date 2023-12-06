@@ -12,7 +12,7 @@ BEGIN {
     }
 
     if($1=="interface"){
-        interface[i]=$2;
+        interface[i]=$2  " at file : " FILENAME;
         
     }
     if($1=="switchport"){
@@ -58,7 +58,8 @@ END {
     if(modeAccess == 1)
         {
             if(!(!trunkEncapsulation && !trunkAllowedVlan && !trunkNativeVlan && portSecurity && !trunkMode))
-                print "Trunk mode badly configured: " interface[i] " " FILENAME ;
+                print "Trunk mode badly configured: " interface[i] ;
+                
         }
 
         trunkMode = 0;
