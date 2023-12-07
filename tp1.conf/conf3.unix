@@ -24,6 +24,6 @@ interface FastEthernet2
  ip address 192.165.1.154 255.255.255.0
  crypto map IPSEC_2_1
 !
-access-list 120 permit ip 192.0.0.0 0.0.0.255 192.0.2.0 0.0.0.255
+access-list 120 permit ip 198.0.0.0 0.0.0.255 192.0.2.0 0.0.0.255
 !
 end
