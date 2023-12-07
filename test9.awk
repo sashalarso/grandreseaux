@@ -12,6 +12,8 @@ BEGIN {
     acl[0]="";
     i=-1;
     j=0;
+    
+    k=0;
 }
 {
     file=FILENAME;
@@ -42,9 +44,14 @@ BEGIN {
         inmatch=1;
         cryptomap[i][j]=$0;
         acl[$3]=$0;
-        j=j+1
+        j=j+1;
+        aclapplied[$3]=FILENAME;
+    }
+    if($1=="access-list"){
+        acldefined[$2]=FILENAME;
     }
     if ($1=="!"){
+        #verification de la validité de la cryptomap
         if(incryptomap && (!inpeer || !intransform || !inmatch) && !ininterface ){
         print "crypto map in "FILENAME " badly configured : " cryptomap[i][0];
     }
@@ -59,6 +66,18 @@ BEGIN {
         cryptodefined=0;
         i=i+1;
         j=0;
+        k=k+1;
+    }
+    if($1=="end"){
+        #on essaye de trouver des non chevauchements entre acls definies et appliquées
+        for (l in aclapplied){
+            
+            if(!(l in acldefined) && aclapplied[l]==FILENAME){
+                print "acl " l " not defined in " FILENAME;
+            }
+        }
+                
+        k=0;
     }
     
 } 

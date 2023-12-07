@@ -27,6 +27,7 @@ END {
     trunkNativeVlan = 0;
     portSecurity = 0;
     modeAccess = 0;
+    #verification de la présence des attributs
     for(i = 0; i < length(interface); ++i){
         for(j = 0; j < length(content[i]); ++j){
            
@@ -53,7 +54,8 @@ END {
             if(content[i][j] ~/^(.)*mode access(.)*$/)
                 modeAccess = 1;
         }
-        # print trunkMode "  " trunkEncapsulation " " trunkNativeVlan " " trunkAllowedVlan " " portSecurity " " modeAccess " "
+        
+    #en fonction de la présence des attributs et du mode on peut en déduire si la conf est bien faite ou non
     if(trunkMode == 1)
         {
             if(!(trunkEncapsulation && trunkAllowedVlan && trunkNativeVlan && !portSecurity && !modeAccess))
@@ -68,6 +70,6 @@ END {
         modeAccess = 0;
 
     }
-    #print length(interface)
+    
 }
 ' $*

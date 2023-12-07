@@ -8,6 +8,7 @@ BEGIN {
     if($1 == "snmp-server" && $4 == "RO"  ) 
     {
         found = 1;
+        #verification de la présence du 5ème élément
         if (NF<5){
             found=0;
             line=$0;
