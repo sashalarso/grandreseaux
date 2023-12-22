@@ -1,0 +1,14 @@
+hostname pe4
+!
+ip vrf auchan
+ route-target export 5
+ route-target import 5
+!
+ip vrf leroymerlin
+ route-target export 2
+ route-target import 2
+!
+ip vrf boulanger
+ route-target export 3
+ route-target import 3
+!

@@ -1,0 +1,14 @@
+pe1-visa import 1
+pe2-visa import 1
+pe1-leroymerlin import 2
+pe2-leroymerlin import 2
+pe4-leroymerlin import 2
+pe2-boulanger import 3
+pe3-boulanger import 3
+pe4-boulanger import 3
+pe1-carrefour import 4
+pe3-carrefour import 4
+pe1-auchan import 5
+pe4-auchan import 5
+pe2-leroymerlin import 6
+pe1-visa import 7

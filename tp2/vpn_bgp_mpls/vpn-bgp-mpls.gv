@@ -1,0 +1,35 @@
+digraph G {
+	node [shape=circle]
+	"pe1-visa"
+	"pe1-visa" -> "pe2-visa" [label=1]
+	"pe2-visa" -> "pe1-visa" [label=1]
+	"pe2-visa"
+	"pe1-leroymerlin"
+	"pe1-leroymerlin" -> "pe2-leroymerlin" [label=2]
+	"pe1-leroymerlin" -> "pe4-leroymerlin" [label=2]
+	"pe2-leroymerlin" -> "pe1-leroymerlin" [label=2]
+	"pe2-leroymerlin"
+	"pe2-leroymerlin" -> "pe4-leroymerlin" [label=2]
+	"pe4-leroymerlin" -> "pe1-leroymerlin" [label=2]
+	"pe4-leroymerlin" -> "pe2-leroymerlin" [label=2]
+	"pe4-leroymerlin"
+	"pe2-boulanger"
+	"pe2-boulanger" -> "pe3-boulanger" [label=3]
+	"pe2-boulanger" -> "pe4-boulanger" [label=3]
+	"pe3-boulanger" -> "pe2-boulanger" [label=3]
+	"pe3-boulanger"
+	"pe3-boulanger" -> "pe4-boulanger" [label=3]
+	"pe4-boulanger" -> "pe2-boulanger" [label=3]
+	"pe4-boulanger" -> "pe3-boulanger" [label=3]
+	"pe4-boulanger"
+	"pe1-carrefour"
+	"pe1-carrefour" -> "pe3-carrefour" [label=4]
+	"pe3-carrefour" -> "pe1-carrefour" [label=4]
+	"pe3-carrefour"
+	"pe1-auchan"
+	"pe1-auchan" -> "pe4-auchan" [label=5]
+	"pe4-auchan" -> "pe1-auchan" [label=5]
+	"pe4-auchan"
+	"pe2-leroymerlin" -> "pe1-visa" [label=6]
+	"pe1-visa" -> "pe2-leroymerlin" [label=7]
+}

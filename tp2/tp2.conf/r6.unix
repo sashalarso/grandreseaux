@@ -1,0 +1,9 @@
+hostname r6
+
+interface loopback
+ ip address 13.0.0.2
+
+router bgp 6
+ neighbor 18.0.0.1 remote-as 8
+ neighbor 18.0.0.1 password secret
+!

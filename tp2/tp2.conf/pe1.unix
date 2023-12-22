@@ -1,0 +1,20 @@
+hostname pe1
+!
+ip vrf visa
+ route-target export 1
+ route-target import 1
+ route-target export 6
+ route-target import 7
+!
+ip vrf leroymerlin
+ route-target export 2
+ route-target import 2
+!
+ip vrf carrefour
+ route-target export 4
+ route-target import 4
+!
+ip vrf auchan
+ route-target export 5
+ route-target import 5
+!

@@ -1,0 +1,12 @@
+hostname r5
+
+interface loopback
+ ip address 13.0.0.1
+
+router bgp 2
+ neighbor 10.0.0.1 remote-as 4
+ neighbor 10.0.0.1 password secret
+ neighbor 10.0.0.2 remote-as 4
+ neighbor 10.0.0.1 password secret
+ neighbor 12.0.0.1 remote-as 3
+!

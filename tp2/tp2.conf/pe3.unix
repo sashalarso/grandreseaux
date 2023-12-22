@@ -1,0 +1,10 @@
+hostname pe3
+!
+ip vrf carrefour
+ route-target export 4
+ route-target import 4
+!
+ip vrf boulanger
+ route-target export 3
+ route-target import 3
+!
